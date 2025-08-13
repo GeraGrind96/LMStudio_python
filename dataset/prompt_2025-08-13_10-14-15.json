@@ -1,0 +1,770 @@
+{
+    "messages": [
+        {
+            "person_name": "person_1",
+            "distance": [
+                0.07203855398339652,
+                1.0722115698600885
+            ],
+            "orientation": 0.37,
+            "robot_speed": [
+                0.00032072883914224803,
+                0.005994196981191635
+            ],
+            "intention_targets": [],
+            "robot_submissions": [
+                [
+                    "aff_follow_1",
+                    "person_1"
+                ]
+            ],
+            "actual_room_name": "room_0",
+            "time_last_event": 1.001047134399414,
+            "time_mission_start": 1.4557807445526123
+        },
+        {
+            "person_name": "person_1",
+            "distance": [
+                0.06918508551511902,
+                1.2206165828555564
+            ],
+            "orientation": 3.11,
+            "robot_speed": [
+                0.32573065161705017,
+                -0.002010037424042821
+            ],
+            "intention_targets": [
+                "Shadow"
+            ],
+            "robot_submissions": [
+                [
+                    "aff_follow_1",
+                    "person_1"
+                ]
+            ],
+            "actual_room_name": "room_0",
+            "time_last_event": 1.4997546672821045,
+            "time_mission_start": 2.9556334018707275
+        },
+        {
+            "person_name": "person_1",
+            "distance": [
+                0.022691933378082837,
+                1.0598514682796485
+            ],
+            "orientation": -3.07,
+            "robot_speed": [
+                0.007492613047361374,
+                0.003736821934580803
+            ],
+            "intention_targets": [
+                "Shadow"
+            ],
+            "robot_submissions": [
+                [
+                    "aff_follow_1",
+                    "person_1"
+                ]
+            ],
+            "actual_room_name": "room_0",
+            "time_last_event": 1.4995861053466797,
+            "time_mission_start": 4.455312728881836
+        },
+        {
+            "person_name": "person_1",
+            "distance": [
+                0.10949143306523894,
+                0.9395328418143092
+            ],
+            "orientation": 2.2,
+            "robot_speed": [
+                0.00744124548509717,
+                -0.0036224869545549154
+            ],
+            "intention_targets": [
+                "Shadow"
+            ],
+            "robot_submissions": [
+                [
+                    "aff_follow_1",
+                    "person_1"
+                ]
+            ],
+            "actual_room_name": "room_0",
+            "time_last_event": 1.5003926753997803,
+            "time_mission_start": 5.955763578414917
+        },
+        {
+            "person_name": "person_1",
+            "distance": [
+                -0.006943877788597262,
+                1.0127308239867454
+            ],
+            "orientation": 0.13,
+            "robot_speed": [
+                -0.0013273125514388084,
+                0.003297318471595645
+            ],
+            "intention_targets": [],
+            "robot_submissions": [
+                [
+                    "aff_follow_1",
+                    "person_1"
+                ]
+            ],
+            "actual_room_name": "room_0",
+            "time_last_event": 1.4994773864746094,
+            "time_mission_start": 7.4552905559539795
+        },
+        {
+            "person_name": "person_1",
+            "distance": [
+                0.1001209431452108,
+                1.7900626329132807
+            ],
+            "orientation": -0.22,
+            "robot_speed": [
+                0.4929899573326111,
+                -0.08185974508523941
+            ],
+            "intention_targets": [
+                "door_0_4_0"
+            ],
+            "robot_submissions": [
+                [
+                    "aff_follow_1",
+                    "person_1"
+                ]
+            ],
+            "actual_room_name": "room_0",
+            "time_last_event": 1.4999947547912598,
+            "time_mission_start": 8.955357313156128
+        },
+        {
+            "person_name": "person_1",
+            "distance": [
+                -0.0566407576702411,
+                2.395334778990995
+            ],
+            "orientation": 0.11,
+            "robot_speed": [
+                0.5655800104141235,
+                0.03310973569750786
+            ],
+            "intention_targets": [
+                "door_0_4_0"
+            ],
+            "robot_submissions": [
+                [
+                    "aff_follow_1",
+                    "person_1"
+                ]
+            ],
+            "actual_room_name": "room_0",
+            "time_last_event": 1.5004594326019287,
+            "time_mission_start": 10.455883502960205
+        },
+        {
+            "person_name": "person_1",
+            "distance": [
+                -0.05591381319386678,
+                2.947927228330638
+            ],
+            "orientation": -0.01,
+            "robot_speed": [
+                0.5814849138259888,
+                0.015112053602933884
+            ],
+            "intention_targets": [
+                "door_0_4_0"
+            ],
+            "robot_submissions": [
+                [
+                    "aff_follow_1",
+                    "person_1"
+                ]
+            ],
+            "actual_room_name": "room_0",
+            "time_last_event": 1.4999334812164307,
+            "time_mission_start": 11.955892324447632
+        },
+        {
+            "person_name": "person_1",
+            "distance": [
+                -0.07719360324774371,
+                3.6306719023147953
+            ],
+            "orientation": 0.14,
+            "robot_speed": [
+                -0.006965012289583683,
+                -0.0021920916624367237
+            ],
+            "intention_targets": [],
+            "robot_submissions": [
+                [
+                    "aff_cross_0_4_0",
+                    "door_0_4_0"
+                ]
+            ],
+            "actual_room_name": "room_0",
+            "time_last_event": 1.5001802444458008,
+            "time_mission_start": 13.45613718032837
+        },
+        {
+            "person_name": "person_1",
+            "distance": [
+                -0.5802793327914733,
+                4.13417896532249
+            ],
+            "orientation": -0.32,
+            "robot_speed": [
+                0.4563034176826477,
+                -0.11219384521245956
+            ],
+            "intention_targets": [],
+            "robot_submissions": [
+                [
+                    "aff_cross_0_4_0",
+                    "door_0_4_0"
+                ]
+            ],
+            "actual_room_name": "room_0",
+            "time_last_event": 1.4993400573730469,
+            "time_mission_start": 14.955563306808472
+        },
+        {
+            "person_name": "person_1",
+            "distance": [
+                -0.516892379901963,
+                3.691728705573501
+            ],
+            "orientation": -0.68,
+            "robot_speed": [
+                0.29326561093330383,
+                -0.009592995047569275
+            ],
+            "intention_targets": [],
+            "robot_submissions": [
+                [
+                    "aff_cross_0_4_0",
+                    "door_0_4_0"
+                ]
+            ],
+            "actual_room_name": "room_0",
+            "time_last_event": 1.5003657341003418,
+            "time_mission_start": 16.456023931503296
+        },
+        {
+            "person_name": "person_1",
+            "distance": [
+                0.4466036299268435,
+                3.560260829118745
+            ],
+            "orientation": -0.78,
+            "robot_speed": [
+                0.31048452854156494,
+                0.2524198293685913
+            ],
+            "intention_targets": [],
+            "robot_submissions": [
+                [
+                    "aff_cross_0_4_0",
+                    "door_0_4_0"
+                ]
+            ],
+            "actual_room_name": "room_0",
+            "time_last_event": 1.4999215602874756,
+            "time_mission_start": 17.956021547317505
+        },
+        {
+            "person_name": "person_1",
+            "distance": [
+                1.0912527235731018,
+                2.8243252193824135
+            ],
+            "orientation": -1.01,
+            "robot_speed": [
+                0.4229295551776886,
+                0.09157857298851013
+            ],
+            "intention_targets": [],
+            "robot_submissions": [
+                [
+                    "aff_cross_0_4_0",
+                    "door_0_4_0"
+                ]
+            ],
+            "actual_room_name": "room_0",
+            "time_last_event": 1.499938726425171,
+            "time_mission_start": 19.456013917922974
+        },
+        {
+            "person_name": "person_1",
+            "distance": [
+                1.326669320775988,
+                2.3760254437785693
+            ],
+            "orientation": -1.23,
+            "robot_speed": [
+                0.31101736426353455,
+                -0.03252587839961052
+            ],
+            "intention_targets": [],
+            "robot_submissions": [
+                [
+                    "aff_cross_0_4_0",
+                    "door_0_4_0"
+                ]
+            ],
+            "actual_room_name": "room_0",
+            "time_last_event": 1.5001986026763916,
+            "time_mission_start": 20.956273555755615
+        },
+        {
+            "person_name": "person_1",
+            "distance": [
+                1.0272134214611892,
+                1.8965090449239315
+            ],
+            "orientation": -1.01,
+            "robot_speed": [
+                0.46161678433418274,
+                -0.04827537760138512
+            ],
+            "intention_targets": [],
+            "robot_submissions": [
+                [
+                    "aff_cross_0_4_0",
+                    "door_0_4_0"
+                ]
+            ],
+            "actual_room_name": "room_0",
+            "time_last_event": 1.499385118484497,
+            "time_mission_start": 22.455751419067383
+        },
+        {
+            "person_name": "person_1",
+            "distance": [
+                0.9358768301790172,
+                1.6029335086036944
+            ],
+            "orientation": -1.02,
+            "robot_speed": [
+                -0.004865007009357214,
+                0.0003505624190438539
+            ],
+            "intention_targets": [],
+            "robot_submissions": [
+                [
+                    "aff_cross_0_4_0",
+                    "door_0_4_0"
+                ]
+            ],
+            "actual_room_name": "room_0",
+            "time_last_event": 1.5002515316009521,
+            "time_mission_start": 23.95605731010437
+        },
+        {
+            "person_name": "person_1",
+            "distance": [
+                0.9301647538173482,
+                1.5988427582580882
+            ],
+            "orientation": -0.9,
+            "robot_speed": [
+                -0.0013642878038808703,
+                0.007286974228918552
+            ],
+            "intention_targets": [],
+            "robot_submissions": [
+                [
+                    "aff_follow_1",
+                    "person_1"
+                ]
+            ],
+            "actual_room_name": "room_1",
+            "time_last_event": 1.4994597434997559,
+            "time_mission_start": 25.45560050010681
+        },
+        {
+            "person_name": "person_1",
+            "distance": [
+                0.9309283217447311,
+                1.6163108406469022
+            ],
+            "orientation": -1.01,
+            "robot_speed": [
+                -0.004070895723998547,
+                0.0004996061325073242
+            ],
+            "intention_targets": [],
+            "robot_submissions": [
+                [
+                    "aff_follow_1",
+                    "person_1"
+                ]
+            ],
+            "actual_room_name": "room_1",
+            "time_last_event": 1.4998865127563477,
+            "time_mission_start": 26.955570459365845
+        },
+        {
+            "person_name": "person_1",
+            "distance": [
+                0.6465483946393765,
+                2.063588571420092
+            ],
+            "orientation": -0.8,
+            "robot_speed": [
+                0.10021631419658661,
+                -0.47461235523223877
+            ],
+            "intention_targets": [
+                "door_1_2_0"
+            ],
+            "robot_submissions": [
+                [
+                    "aff_follow_1",
+                    "person_1"
+                ]
+            ],
+            "actual_room_name": "room_1",
+            "time_last_event": 1.4997713565826416,
+            "time_mission_start": 28.45542883872986
+        },
+        {
+            "person_name": "person_1",
+            "distance": [
+                0.47506453503323604,
+                2.907912827334155
+            ],
+            "orientation": -0.47,
+            "robot_speed": [
+                0.2843661606311798,
+                -0.20328038930892944
+            ],
+            "intention_targets": [
+                "door_1_2_0"
+            ],
+            "robot_submissions": [
+                [
+                    "aff_follow_1",
+                    "person_1"
+                ]
+            ],
+            "actual_room_name": "room_1",
+            "time_last_event": 1.4999823570251465,
+            "time_mission_start": 29.95547127723694
+        },
+        {
+            "person_name": "person_1",
+            "distance": [
+                0.3932566496683596,
+                3.4970602369620822
+            ],
+            "orientation": -0.35,
+            "robot_speed": [
+                0.35411104559898376,
+                -0.1828138530254364
+            ],
+            "intention_targets": [
+                "door_1_2_0"
+            ],
+            "robot_submissions": [
+                [
+                    "aff_follow_1",
+                    "person_1"
+                ]
+            ],
+            "actual_room_name": "room_1",
+            "time_last_event": 1.000821828842163,
+            "time_mission_start": 30.956368684768677
+        },
+        {
+            "person_name": "person_1",
+            "distance": [
+                0.1288689567175491,
+                3.091607230818559
+            ],
+            "orientation": -0.28,
+            "robot_speed": [
+                -0.0077175660990178585,
+                -0.0062745846807956696
+            ],
+            "intention_targets": [],
+            "robot_submissions": [
+                [
+                    "aff_cross_1_2_0",
+                    "door_1_2_0"
+                ]
+            ],
+            "actual_room_name": "room_1",
+            "time_last_event": 1.499603509902954,
+            "time_mission_start": 32.45606732368469
+        },
+        {
+            "person_name": "person_1",
+            "distance": [
+                0.8768506056171285,
+                2.6836036777227954
+            ],
+            "orientation": -0.54,
+            "robot_speed": [
+                0.41528087854385376,
+                0.12199119478464127
+            ],
+            "intention_targets": [],
+            "robot_submissions": [
+                [
+                    "aff_cross_1_2_0",
+                    "door_1_2_0"
+                ]
+            ],
+            "actual_room_name": "room_1",
+            "time_last_event": 1.4997103214263916,
+            "time_mission_start": 33.9558584690094
+        },
+        {
+            "person_name": "person_1",
+            "distance": [
+                1.0708019167228304,
+                1.9180828223752535
+            ],
+            "orientation": -0.63,
+            "robot_speed": [
+                0.5264319777488708,
+                0.03993111103773117
+            ],
+            "intention_targets": [],
+            "robot_submissions": [
+                [
+                    "aff_cross_1_2_0",
+                    "door_1_2_0"
+                ]
+            ],
+            "actual_room_name": "room_1",
+            "time_last_event": 1.499943494796753,
+            "time_mission_start": 35.45585036277771
+        },
+        {
+            "person_name": "person_1",
+            "distance": [
+                2.9403798212496395,
+                2.8651923731714137
+            ],
+            "orientation": -0.56,
+            "robot_speed": [
+                0.3781200647354126,
+                -0.00017701367323752493
+            ],
+            "intention_targets": [],
+            "robot_submissions": [
+                [
+                    "aff_cross_1_2_0",
+                    "door_1_2_0"
+                ]
+            ],
+            "actual_room_name": "room_1",
+            "time_last_event": 1.4994187355041504,
+            "time_mission_start": 36.955421686172485
+        },
+        {
+            "person_name": "person_1",
+            "distance": [
+                2.520544780515052,
+                3.01907514852998
+            ],
+            "orientation": -2.06,
+            "robot_speed": [
+                -0.013341883197426796,
+                -0.6976749897003174
+            ],
+            "intention_targets": [],
+            "robot_submissions": [
+                [
+                    "aff_cross_1_2_0",
+                    "door_1_2_0"
+                ]
+            ],
+            "actual_room_name": "room_1",
+            "time_last_event": 1.5002002716064453,
+            "time_mission_start": 38.455689907073975
+        },
+        {
+            "person_name": "person_1",
+            "distance": [
+                0.48960780120763636,
+                3.6807794353430987
+            ],
+            "orientation": 0.14,
+            "robot_speed": [
+                0.3818821609020233,
+                -0.1720767319202423
+            ],
+            "intention_targets": [],
+            "robot_submissions": [
+                [
+                    "aff_cross_1_2_0",
+                    "door_1_2_0"
+                ]
+            ],
+            "actual_room_name": "room_1",
+            "time_last_event": 1.5001754760742188,
+            "time_mission_start": 39.955944299697876
+        },
+        {
+            "person_name": "person_1",
+            "distance": [
+                -0.06303201396562554,
+                3.15036854285123
+            ],
+            "orientation": 0.17,
+            "robot_speed": [
+                0.2899579107761383,
+                -0.06182018294930458
+            ],
+            "intention_targets": [],
+            "robot_submissions": [
+                [
+                    "aff_cross_1_2_0",
+                    "door_1_2_0"
+                ]
+            ],
+            "actual_room_name": "room_1",
+            "time_last_event": 1.4990947246551514,
+            "time_mission_start": 41.4551100730896
+        },
+        {
+            "person_name": "person_1",
+            "distance": [
+                -0.1697480788542248,
+                3.3733289724784523
+            ],
+            "orientation": 0.28,
+            "robot_speed": [
+                0.469418466091156,
+                0.1142209991812706
+            ],
+            "intention_targets": [],
+            "robot_submissions": [
+                [
+                    "aff_cross_1_2_0",
+                    "door_1_2_0"
+                ]
+            ],
+            "actual_room_name": "room_1",
+            "time_last_event": 1.5009500980377197,
+            "time_mission_start": 42.95612359046936
+        },
+        {
+            "person_name": "person_1",
+            "distance": [
+                0.04376817764503721,
+                2.9444176617943234
+            ],
+            "orientation": 0.05,
+            "robot_speed": [
+                0.35852229595184326,
+                0.0376870222389698
+            ],
+            "intention_targets": [],
+            "robot_submissions": [
+                [
+                    "aff_cross_1_2_0",
+                    "door_1_2_0"
+                ]
+            ],
+            "actual_room_name": "room_1",
+            "time_last_event": 1.4992799758911133,
+            "time_mission_start": 44.45548057556152
+        },
+        {
+            "person_name": "person_1",
+            "distance": [
+                0.17853748497479047,
+                2.7027816296373612
+            ],
+            "orientation": 0.0,
+            "robot_speed": [
+                0.0033967068884521723,
+                -0.0019142619566991925
+            ],
+            "intention_targets": [],
+            "robot_submissions": [
+                [
+                    "aff_cross_1_2_0",
+                    "door_1_2_0"
+                ]
+            ],
+            "actual_room_name": "room_1",
+            "time_last_event": 1.4998126029968262,
+            "time_mission_start": 45.95534873008728
+        },
+        {
+            "person_name": "person_1",
+            "distance": [
+                0.2071330389604164,
+                2.69728498652527
+            ],
+            "orientation": 0.13,
+            "robot_speed": [
+                0.0058054812252521515,
+                -0.00019803216855507344
+            ],
+            "intention_targets": [],
+            "robot_submissions": [
+                [
+                    "aff_follow_1",
+                    "person_1"
+                ]
+            ],
+            "actual_room_name": "room_2",
+            "time_last_event": 1.5003697872161865,
+            "time_mission_start": 47.45577645301819
+        },
+        {
+            "person_name": "person_1",
+            "distance": [
+                0.1813074931106186,
+                2.7024848118811224
+            ],
+            "orientation": -0.01,
+            "robot_speed": [
+                0.0006798719405196607,
+                0.0035415594466030598
+            ],
+            "intention_targets": [],
+            "robot_submissions": [
+                [
+                    "aff_follow_1",
+                    "person_1"
+                ]
+            ],
+            "actual_room_name": "room_2",
+            "time_last_event": 1.500077724456787,
+            "time_mission_start": 48.95592284202576
+        },
+        {
+            "person_name": "person_1",
+            "distance": [
+                0.10263959914560165,
+                2.45932790743652
+            ],
+            "orientation": 0.03,
+            "robot_speed": [
+                0.5199416875839233,
+                -0.07155438512563705
+            ],
+            "intention_targets": [],
+            "robot_submissions": [
+                [
+                    "aff_follow_1",
+                    "person_1"
+                ]
+            ],
+            "actual_room_name": "room_2",
+            "time_last_event": 1.5000336170196533,
+            "time_mission_start": 50.45601963996887
+        }
+    ]
+}

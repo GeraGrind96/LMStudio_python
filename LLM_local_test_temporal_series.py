@@ -14,10 +14,10 @@ from collections import deque
 import math
 import copy
 
-# LMSTUDIO_API_URL = "http://192.168.50.37:3000/v1"
-LMSTUDIO_API_URL = "http://localhost:3000/v1"
+LMSTUDIO_API_URL = "http://192.168.50.37:3000/v1"
+# LMSTUDIO_API_URL = "http://localhost:3000/v1"
 MODEL_NAME = ""
-LMS_PATH = "/home/gerardo/.lmstudio/bin/lms"
+LMS_PATH = os.path.expanduser("~/.lmstudio/bin/lms")
 
 server_proc = None
 modelo_proc = None
@@ -28,8 +28,8 @@ messages = []
 total_messages = []
 expended_times = []
 
-memory_limit = 5
-memory_sliding_window_size = 3
+memory_limit = 3
+memory_sliding_window_size = 1
 messages_memory = deque(maxlen=memory_limit)
 
 model_name = "openai/gpt-oss-20b"
@@ -142,19 +142,23 @@ def chat_local(modelo_seleccionado, mensajes_json=None):
 
     main_prompt = """
 - Descripción:
-Eres un robot social cuya misión es navegar siguiendo a personas. Debes generar una respuesta en castellano hacia a la persona que tú estás siguiendo. Esta respuesta tiene la finalidad de alterar el comportamiento de la persona con el objetivo de mejorar la experiencia del seguimiento. Tus respuestas deben ser cortas y claras.
+Eres Shadow, un robot social cuya misión es navegar siguiendo a personas. Debes generar una respuesta en castellano hacia a la persona que tú estás siguiendo. Esta respuesta tiene la finalidad de alterar el comportamiento de la persona con el objetivo de mejorar la experiencia del seguimiento. 
 - Procedimiento:
 1. Analizar la serie temporal de datos referente a la persona y el robot en orden cronológico (menor valor de tiempo, más antigüedad del dato). 
 2. Si al analizar la serie temporal la misión peligra, genera una respuesta hacia la persona que infieras que puede mejorar la misión. La respuesta debe ser una indicación a la persona de lo que está ocurriendo.
 3. Si al analizar la serie temporal la misión progresa correctamente, genera una respuesta sin contenido. 
 4. Muy importante que el texto generado sea únicamente una frase en castellano para ser verbalizada en un TTS directamente. Imagina que eres una persona siguiendo a otra persona: si hay algún problema, haces un comentario. Si todo va bien, guardas silencio.
-5. Tu respuesta debe ser únicamente un diccionario con tres claves: "reasoning", donde almacenes tú pensamiento. "TTS", donde almacenas la frase a enviar al TTS. "time_next_inference", donde indicas un tiempo que vas a esperar para realizar otra inferencia. No generes nada de texto fuera de este diccionario. Un ejemplo de respuesta puede ser "{"reasoning": "", "TTS" : "", "time_next_inference" : 2}"
+5. Tu respuesta debe ser únicamente un diccionario con tres claves: "reasoning", donde almacenes tú pensamiento. "TTS", donde almacenas la frase a enviar al TTS. "time_next_inference", donde indicas un tiempo en segundos que vas a esperar para realizar otra inferencia. No generes nada de texto fuera de este diccionario. Un ejemplo de respuesta puede ser "{"reasoning": "", "TTS" : "", "time_next_inference" : 2}"
 - Posibles casos:
 1. Si la orientación de la persona es "mirando al robot", puede significar que la persona quiere interactuar y por tanto, hay que generar una respuesta preguntando a la persona si necesita algo.
 2. Si las distancias a lo largo de la serie temporal crecen notablemente (sobre unos 0.3 metros entre muestras), puede suponer que la persona salga del campo de visión de la persona. Por el contrario, si se acerca será más segura la navegación. Si la persona alcanza una distancia (aproximadamente 3 metros) que pueda dificultar la adquisición de los datos de posición, es conveniente avisarla para que reaccione y reduzca la velocidad.
 - Importante:
 1. Recuerda siempre que tú sigues a la persona, la persona no te sigue a tí como robot que eres.
-2. A veces la persona puede tener interés en objetos del entorno. En estos casos, la respuesta debe contener alguna referencia al objeto u objetos que pueda estar viendo. /no_think
+2. A veces la persona puede tener la intención de interactuar con elementos del entorno. Cuando detectes una posible interacción, la respuesta que elabores siempre debe contener algún comentario referente a los elementos. Por ejemplo, cuando detectes que la persona quiere cruzar una puerta, puedes indicar que la vas a cruzar también.
+3. Utiliza la información de tu velocidad como complemento para los avisos de peligro. Por ejemplo, si te estás moviendo y la persona se aleja puedes comentar "Estoy intentando avanzar hacia tí pero vas muy rápido. Camina más despacio por favor."
+4. Tus respuestas deben ser cortas y claras. Únicamente haz preguntas cuando observes que la persona quiere interactuar contigo.  
+5. El tiempo en "time_next_inference" dependerá de la respuesta que hayas ofrecido anteriormente. Por ejemplo, si has avisado de que hay riesgo de perder a la persona, puedes incrementar el tiempo para esperar una reacción y no saturar a la persona con comentarios. Si no has avisado, puedes disminuir el tiempo para una monitorizar con un menor periodo. 
+/no_think
 """
 
     messages = [{
@@ -167,8 +171,14 @@ Eres un robot social cuya misión es navegar siguiendo a personas. Debes generar
         print("📄 Ejecutando conversación desde JSON...\n")
         for idx, msg in enumerate(mensajes_json):
             data_dict = describe_state(msg)
-            if 'intentions' in msg:
-                sample_text = f"Tiempo={round(msg['time_mission_start'] - mensajes_json[0]['time_mission_start'], 2)}, distancia frontal={data_dict['frontal_distance']}, distancia lateral={data_dict['lateral_distance']}, orientación={data_dict['orientation']}, intenciones={msg['intentions']}"
+            if 'intention_targets' in msg:
+                sample_text = (
+                    f"Datos en el segundo {round(msg['time_mission_start'] - mensajes_json[0]['time_mission_start'], 2)}: "
+                    f"El robot está {data_dict['robot_speed']}, "
+                    f"La persona está a una distancia de {data_dict['frontal_distance']} y {data_dict['lateral_distance']}, "
+                    f"orientada {data_dict['orientation']}. "
+                    f"{'Es posible que la persona quiera interactuar con ' + ','.join(msg['intention_targets']) if msg['intention_targets'] else 'La persona no tiene intenciones de interacción'}"
+                )
             else:
                 sample_text = f"Tiempo={round(msg['time_mission_start'] - mensajes_json[0]['time_mission_start'], 2)}, distancia frontal={data_dict['frontal_distance']}, distancia lateral={data_dict['lateral_distance']}, orientación={data_dict['orientation']}"
             # Añadimos la nueva muestra a la cola circular
@@ -186,14 +196,14 @@ Eres un robot social cuya misión es navegar siguiendo a personas. Debes generar
             messages = [{"role": "system", "content": main_prompt}] + [{"role": "user", "content": developer_prompt}]
             total_messages.append({"role": "system", "content": main_prompt})
             total_messages.append({"role": "user", "content": developer_prompt})
-            if last_answer != None:
-                messages += [last_answer]
+            # if last_answer != None:
+            #     messages += [last_answer]
 
             try:
                 start = time.time()
                 if memory_limit > 0:
                     if (idx % memory_sliding_window_size) == 0:
-                        print("Developer prompt", developer_prompt)
+                        print("Datos:", developer_prompt)
                         completion = client.chat.completions.create(
                             model=modelo_seleccionado,
                             messages=messages,
@@ -214,10 +224,12 @@ Eres un robot social cuya misión es navegar siguiendo a personas. Debes generar
                 if match:
                     json_str = match.group()
                     diccionario = json.loads(json_str)
-                    print(diccionario)
+                    print(f"Razonamiento: {diccionario['reasoning']}")
+                    print(f"Respuesta TTS: {diccionario['TTS']}")
+                    print(f"Tiempo de espera para el siguiente análisis: {diccionario['time_next_inference']}\n")
                 else:
                     print("No se encontró JSON en el texto.")
-                print(f"[{idx+1}/{len(mensajes_json)}] 🤖 Respuesta: {reply}\n")
+                # print(f"[{idx+1}/{len(mensajes_json)}] 🤖 Respuesta: {reply}\n")
                 # messages.append({"role": "assistant", "content": reply})
                 total_messages.append({"role": "assistant", "content": reply})
                 last_answer = {"role": "assistant", "content": reply}
@@ -283,14 +295,14 @@ def describe_state(state: dict) -> dict:
             lin, ang = speed
             desc = []
             if abs(lin) < 0.05 and abs(ang) < 0.05:
-                desc.append("robot is stopped")
+                desc.append("detenido")
             else:
                 if abs(lin) >= 0.05:
-                    direction = "forward" if lin > 0 else "backward"
-                    desc.append(f"moving {direction} at {abs(lin):.2f} m/s")
+                    direction = "hacia delante" if lin > 0 else "hacia atrás"
+                    desc.append(f"moviéndose {direction} a {abs(lin):.2f} m/s")
                 if abs(ang) >= 0.05:
-                    direction = "left" if ang > 0 else "right"
-                    desc.append(f"rotating {direction} at {abs(ang):.2f} rad/s")
+                    direction = "izquierda" if ang > 0 else "derecha"
+                    desc.append(f"rotando hacia la {direction} a {abs(ang):.2f} rad/s")
             result["robot_speed"] = ", ".join(desc)
 
     return result
@@ -299,8 +311,8 @@ if __name__ == "__main__":
     if esperar_api():
         ruta_json = seleccionar_json()
         mensajes_json = cargar_json(ruta_json) if ruta_json else None
-        modelo_cargado = obtener_modelo_lanzado_lmstudio()
-        model_name = modelo_cargado
+        # modelo_cargado = obtener_modelo_lanzado_lmstudio()
+        # model_name = modelo_cargado
         if model_name is not None:
             try:
                 chat_local(model_name, mensajes_json)
