@@ -18,7 +18,7 @@
                     "person_1"
                 ]
             ],
-            "actual_room_name": "room_0",
+            "actual_room_name": "salón",
             "time_last_event": 1.001047134399414,
             "time_mission_start": 1.4557807445526123
         },
@@ -42,7 +42,7 @@
                     "person_1"
                 ]
             ],
-            "actual_room_name": "room_0",
+            "actual_room_name": "salón",
             "time_last_event": 1.4997546672821045,
             "time_mission_start": 2.9556334018707275
         },
@@ -66,7 +66,7 @@
                     "person_1"
                 ]
             ],
-            "actual_room_name": "room_0",
+            "actual_room_name": "salón",
             "time_last_event": 1.4995861053466797,
             "time_mission_start": 4.455312728881836
         },
@@ -90,7 +90,7 @@
                     "person_1"
                 ]
             ],
-            "actual_room_name": "room_0",
+            "actual_room_name": "salón",
             "time_last_event": 1.5003926753997803,
             "time_mission_start": 5.955763578414917
         },
@@ -112,7 +112,7 @@
                     "person_1"
                 ]
             ],
-            "actual_room_name": "room_0",
+            "actual_room_name": "salón",
             "time_last_event": 1.4994773864746094,
             "time_mission_start": 7.4552905559539795
         },
@@ -136,7 +136,7 @@
                     "person_1"
                 ]
             ],
-            "actual_room_name": "room_0",
+            "actual_room_name": "salón",
             "time_last_event": 1.4999947547912598,
             "time_mission_start": 8.955357313156128
         },
@@ -160,7 +160,7 @@
                     "person_1"
                 ]
             ],
-            "actual_room_name": "room_0",
+            "actual_room_name": "salón",
             "time_last_event": 1.5004594326019287,
             "time_mission_start": 10.455883502960205
         },
@@ -184,7 +184,7 @@
                     "person_1"
                 ]
             ],
-            "actual_room_name": "room_0",
+            "actual_room_name": "salón",
             "time_last_event": 1.4999334812164307,
             "time_mission_start": 11.955892324447632
         },
@@ -206,7 +206,7 @@
                     "door_0_4_0"
                 ]
             ],
-            "actual_room_name": "room_0",
+            "actual_room_name": "salón",
             "time_last_event": 1.5001802444458008,
             "time_mission_start": 13.45613718032837
         },
@@ -228,7 +228,7 @@
                     "door_0_4_0"
                 ]
             ],
-            "actual_room_name": "room_0",
+            "actual_room_name": "salón",
             "time_last_event": 1.4993400573730469,
             "time_mission_start": 14.955563306808472
         },
@@ -250,7 +250,7 @@
                     "door_0_4_0"
                 ]
             ],
-            "actual_room_name": "room_0",
+            "actual_room_name": "salón",
             "time_last_event": 1.5003657341003418,
             "time_mission_start": 16.456023931503296
         },
@@ -272,7 +272,7 @@
                     "door_0_4_0"
                 ]
             ],
-            "actual_room_name": "room_0",
+            "actual_room_name": "salón",
             "time_last_event": 1.4999215602874756,
             "time_mission_start": 17.956021547317505
         },
@@ -294,7 +294,7 @@
                     "door_0_4_0"
                 ]
             ],
-            "actual_room_name": "room_0",
+            "actual_room_name": "salón",
             "time_last_event": 1.499938726425171,
             "time_mission_start": 19.456013917922974
         },
@@ -316,7 +316,7 @@
                     "door_0_4_0"
                 ]
             ],
-            "actual_room_name": "room_0",
+            "actual_room_name": "salón",
             "time_last_event": 1.5001986026763916,
             "time_mission_start": 20.956273555755615
         },
@@ -338,7 +338,7 @@
                     "door_0_4_0"
                 ]
             ],
-            "actual_room_name": "room_0",
+            "actual_room_name": "salón",
             "time_last_event": 1.499385118484497,
             "time_mission_start": 22.455751419067383
         },
@@ -360,7 +360,7 @@
                     "door_0_4_0"
                 ]
             ],
-            "actual_room_name": "room_0",
+            "actual_room_name": "salón",
             "time_last_event": 1.5002515316009521,
             "time_mission_start": 23.95605731010437
         },
@@ -382,7 +382,7 @@
                     "person_1"
                 ]
             ],
-            "actual_room_name": "room_1",
+            "actual_room_name": "dormitorio",
             "time_last_event": 1.4994597434997559,
             "time_mission_start": 25.45560050010681
         },
@@ -404,7 +404,7 @@
                     "person_1"
                 ]
             ],
-            "actual_room_name": "room_1",
+            "actual_room_name": "dormitorio",
             "time_last_event": 1.4998865127563477,
             "time_mission_start": 26.955570459365845
         },
@@ -428,7 +428,7 @@
                     "person_1"
                 ]
             ],
-            "actual_room_name": "room_1",
+            "actual_room_name": "dormitorio",
             "time_last_event": 1.4997713565826416,
             "time_mission_start": 28.45542883872986
         },
@@ -452,7 +452,7 @@
                     "person_1"
                 ]
             ],
-            "actual_room_name": "room_1",
+            "actual_room_name": "dormitorio",
             "time_last_event": 1.4999823570251465,
             "time_mission_start": 29.95547127723694
         },
@@ -476,7 +476,7 @@
                     "person_1"
                 ]
             ],
-            "actual_room_name": "room_1",
+            "actual_room_name": "dormitorio",
             "time_last_event": 1.000821828842163,
             "time_mission_start": 30.956368684768677
         },
@@ -498,7 +498,7 @@
                     "door_1_2_0"
                 ]
             ],
-            "actual_room_name": "room_1",
+            "actual_room_name": "dormitorio",
             "time_last_event": 1.499603509902954,
             "time_mission_start": 32.45606732368469
         },
@@ -520,7 +520,7 @@
                     "door_1_2_0"
                 ]
             ],
-            "actual_room_name": "room_1",
+            "actual_room_name": "dormitorio",
             "time_last_event": 1.4997103214263916,
             "time_mission_start": 33.9558584690094
         },
@@ -542,7 +542,7 @@
                     "door_1_2_0"
                 ]
             ],
-            "actual_room_name": "room_1",
+            "actual_room_name": "dormitorio",
             "time_last_event": 1.499943494796753,
             "time_mission_start": 35.45585036277771
         },
@@ -564,7 +564,7 @@
                     "door_1_2_0"
                 ]
             ],
-            "actual_room_name": "room_1",
+            "actual_room_name": "dormitorio",
             "time_last_event": 1.4994187355041504,
             "time_mission_start": 36.955421686172485
         },
@@ -586,7 +586,7 @@
                     "door_1_2_0"
                 ]
             ],
-            "actual_room_name": "room_1",
+            "actual_room_name": "dormitorio",
             "time_last_event": 1.5002002716064453,
             "time_mission_start": 38.455689907073975
         },
@@ -608,7 +608,7 @@
                     "door_1_2_0"
                 ]
             ],
-            "actual_room_name": "room_1",
+            "actual_room_name": "dormitorio",
             "time_last_event": 1.5001754760742188,
             "time_mission_start": 39.955944299697876
         },
@@ -630,7 +630,7 @@
                     "door_1_2_0"
                 ]
             ],
-            "actual_room_name": "room_1",
+            "actual_room_name": "dormitorio",
             "time_last_event": 1.4990947246551514,
             "time_mission_start": 41.4551100730896
         },
@@ -652,7 +652,7 @@
                     "door_1_2_0"
                 ]
             ],
-            "actual_room_name": "room_1",
+            "actual_room_name": "dormitorio",
             "time_last_event": 1.5009500980377197,
             "time_mission_start": 42.95612359046936
         },
@@ -674,7 +674,7 @@
                     "door_1_2_0"
                 ]
             ],
-            "actual_room_name": "room_1",
+            "actual_room_name": "dormitorio",
             "time_last_event": 1.4992799758911133,
             "time_mission_start": 44.45548057556152
         },
@@ -696,7 +696,7 @@
                     "door_1_2_0"
                 ]
             ],
-            "actual_room_name": "room_1",
+            "actual_room_name": "dormitorio",
             "time_last_event": 1.4998126029968262,
             "time_mission_start": 45.95534873008728
         },
@@ -718,7 +718,7 @@
                     "person_1"
                 ]
             ],
-            "actual_room_name": "room_2",
+            "actual_room_name": "baño",
             "time_last_event": 1.5003697872161865,
             "time_mission_start": 47.45577645301819
         },
@@ -740,7 +740,7 @@
                     "person_1"
                 ]
             ],
-            "actual_room_name": "room_2",
+            "actual_room_name": "baño",
             "time_last_event": 1.500077724456787,
             "time_mission_start": 48.95592284202576
         },
@@ -762,7 +762,7 @@
                     "person_1"
                 ]
             ],
-            "actual_room_name": "room_2",
+            "actual_room_name": "baño",
             "time_last_event": 1.5000336170196533,
             "time_mission_start": 50.45601963996887
         }

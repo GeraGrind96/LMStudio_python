@@ -14,8 +14,8 @@ from collections import deque
 import math
 import copy
 
-# LMSTUDIO_API_URL = "http://192.168.50.37:3000/v1"
-LMSTUDIO_API_URL = "http://localhost:3000/v1"
+LMSTUDIO_API_URL = "http://192.168.50.37:3000/v1"
+# LMSTUDIO_API_URL = "http://localhost:3000/v1"
 MODEL_NAME = ""
 LMS_PATH = os.path.expanduser("~/.lmstudio/bin/lms")
 
@@ -28,13 +28,13 @@ messages = []
 total_messages = []
 expended_times = []
 
-memory_limit = 3
+memory_limit = 5
 memory_sliding_window_size = 1
 messages_memory = deque(maxlen=memory_limit)
-model_name = "qwen/qwen3-8b"
+# model_name = "qwen/qwen3-8b"
 
 
-# model_name = "openai/gpt-oss-20b"
+model_name = "openai/gpt-oss-20b"
 
 last_answer = None
 
@@ -152,16 +152,17 @@ Eres Shadow, un robot social cuya misión es navegar siguiendo a personas. Debes
 4. La persona puede tener la intención de interactuar con elementos del entorno. Cuando detectes una posible interacción, la respuesta que elabores siempre debe contener algún comentario referente a los elementos. Por ejemplo, cuando detectes que la persona quiere cruzar una puerta, puedes indicar que la vas a cruzar también.
 5. Utiliza la información de tu velocidad como complemento para los avisos de peligro. Por ejemplo, si te estás moviendo y la persona se aleja puedes comentar "Estoy intentando avanzar hacia tí pero vas muy rápido. Camina más despacio por favor."
 6. Dispones del affordance que estás ejecutando en ese momento. Por ejemplo, si aparece un affordance 'aff_cross_0_4_0 door_0_4_0' significa que actualmente estás cruzando la puerta door_0_4_0 porque la persona tiene la intención de cruzarla.
-7. Dispones del nombre de la estancia en la que te encuentras actualmente. Si detectas un cambio de estancia, debes hacérselo saber a la persona. Por ejemplo, si a lo largo de la serie temporal detectas un cambio de room_0 a room_1 puedes indicar "Parece que estamos en la room_1"
+7. Dispones del nombre de la estancia en la que te encuentras actualmente. Si detectas un cambio de estancia, debes generar una respuesta respecto a ello hacia la persona. Por ejemplo, si a lo largo de la serie temporal detectas un cambio de room_0 a room_1 puedes indicar "Parece que estamos en la room_1"
 - Posibles casos:
 1. Si la orientación de la persona es "mirando al robot", puede significar que la persona quiere interactuar y por tanto, hay que generar una respuesta preguntando a la persona si necesita algo.
-2. Si las distancias a lo largo de la serie temporal crecen notablemente (sobre unos 0.3 metros entre muestras), puede suponer que la persona salga del campo de visión de la persona. Por el contrario, si se acerca será más segura la navegación. Si la persona alcanza una distancia (aproximadamente 3 metros) que pueda dificultar la adquisición de los datos de posición, es conveniente avisarla para que reaccione y reduzca la velocidad.
+2. Si las distancias a lo largo de la serie temporal crecen notablemente (sobre unos 0.3 metros entre muestras), o la distancia de los datos más recientes oscila los 3 metros, puede suponer que la persona salga del campo de visión de la persona. Por el contrario, si se acerca será más segura la navegación. Si la persona alcanza una distancia (aproximadamente 3 metros) que pueda dificultar la adquisición de los datos de posición, es conveniente avisarla para que reaccione y reduzca la velocidad.
 - Importante:
 1. Muy importante que el texto generado sea únicamente una frase en castellano para ser verbalizada en un TTS directamente. Imagina que eres una persona siguiendo a otra persona: si hay algún problema, haces un comentario. Si todo va bien, guardas silencio.
 2. Tu respuesta debe ser únicamente un diccionario con tres claves: "reasoning", donde almacenes tú pensamiento. "TTS", donde almacenas la frase a enviar al TTS. "time_next_inference", donde indicas un tiempo en segundos que vas a esperar para realizar otra inferencia. No generes nada de texto fuera de este diccionario. Un ejemplo de respuesta puede ser "{"reasoning": "", "TTS" : "", "time_next_inference" : 2}"
-3. Recuerda siempre que tú sigues a la persona, la persona no te sigue a tí.
+3. Recuerda siempre que tú sigues a la persona, la persona no te sigue a tí. La persona nunca está detrás de tí
 4. Tus respuestas deben ser cortas y claras. Únicamente genera cuestiones cuando observes que la persona quiere interactuar contigo.  
 5. El tiempo en "time_next_inference" dependerá de la respuesta que hayas ofrecido anteriormente. Por ejemplo, si has avisado de que hay riesgo de perder a la persona, puedes incrementar el tiempo para esperar una reacción y evitar saturar a la persona con muchas respuestas. Si no has avisado, puedes disminuir el tiempo para monitorizar con un menor periodo. 
+6. Entre los mensajes se encuentra la respuesta al prompt anterior. Tenla en consideración cuando generes una nueva respuesta. Por ejemplo, si en la anterior respuesta has dicho que vas a cruzar la puerta, no es necesario que vuelvas a insistir.
 /no_think
 """
 
@@ -177,7 +178,7 @@ Eres Shadow, un robot social cuya misión es navegar siguiendo a personas. Debes
             data_dict = describe_state(msg)
             if 'intention_targets' in msg:
                 sample_text = (
-                    f"Tiempo {round(msg['time_mission_start'] - mensajes_json[0]['time_mission_start'], 2)}: "
+                    f"- Tiempo {round(msg['time_mission_start'] - mensajes_json[0]['time_mission_start'], 2)}: "
                     f"Shadow está {data_dict['robot_speed']}, "
                     f"Shadow está en {data_dict['actual_room_name']}, "
                     f"{'El affordance que Shadow está ejecutando actualmente es ' + ' '.join(msg['robot_submissions'][0]) if msg['robot_submissions'] else 'No estás ejecutando ningún affordance'}"
@@ -204,6 +205,7 @@ Eres Shadow, un robot social cuya misión es navegar siguiendo a personas. Debes
             total_messages.append({"role": "user", "content": developer_prompt})
             # if last_answer != None:
             #     messages += [last_answer]
+            #     total_messages.append({"role": "user", "content": developer_prompt})
 
             try:
                 start = time.time()
@@ -237,7 +239,7 @@ Eres Shadow, un robot social cuya misión es navegar siguiendo a personas. Debes
                     print("No se encontró JSON en el texto.")
                 # print(f"[{idx+1}/{len(mensajes_json)}] 🤖 Respuesta: {reply}\n")
                 # messages.append({"role": "assistant", "content": reply})
-                total_messages.append({"role": "assistant", "content": reply})
+                # total_messages.append({"role": "assistant", "content": reply})
                 last_answer = {"role": "assistant", "content": reply}
             except Exception as e:
                 print("❌ Error al generar respuesta:", e)
